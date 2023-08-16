@@ -90,7 +90,7 @@ class public_key(object):
 
         with open(filename, "w") as fp:
             json.dump({"nodename":nodename, 
-                       "creator":"bcrypto.crypto",                       
+                       "creator":"baltradcrypto.crypto",                       
                        "key":self.PEM(),
                        "keyType":keyType,
                        "type":"public"}, fp)

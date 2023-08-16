@@ -6,9 +6,9 @@ REQUIRED_PACKAGES= [
     "python3-pycryptodomex"
 ]
 
-setuptools.setup(name="bcrypto.crypto",
+setuptools.setup(name="baltradcrypto.crypto",
     version="0.1-dev",
-    namespace_packages=["bcrypto"],
+    namespace_packages=["baltradcrypto"],
     zip_safe=False,
     packages=setuptools.find_packages(
         "src",

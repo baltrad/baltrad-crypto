@@ -43,8 +43,8 @@ except:
     
 import hashlib, base64, json, os
 
-from bcrypto.crypto import keyczarutil
-from bcrypto.crypto.keyczarutil import TrimBytes, BigIntToBytes, PrefixHash, RawString, Base64WSDecode, Base64WSEncode, BytesToLong
+from baltradcrypto.crypto import keyczarutil
+from baltradcrypto.crypto.keyczarutil import TrimBytes, BigIntToBytes, PrefixHash, RawString, Base64WSDecode, Base64WSEncode, BytesToLong
 
 def CreateKeyczarHash(key):
     fullhash = PrefixHash(TrimBytes(BigIntToBytes(key.p)),
