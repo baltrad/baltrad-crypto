@@ -7,7 +7,7 @@ REQUIRED_PACKAGES= [
 ]
 
 setuptools.setup(name="baltradcrypto.crypto",
-    version="0.1-dev",
+    version="0.1.dev0",
     namespace_packages=["baltradcrypto"],
     zip_safe=False,
     packages=setuptools.find_packages(
