@@ -3,10 +3,11 @@ import setuptools
 import sys
 
 REQUIRED_PACKAGES= [
-    "python3-pycryptodomex"
+    "pycryptodomex",
+    "pyasn1"
 ]
 
-setuptools.setup(name="baltradcrypto.crypto",
+setuptools.setup(name="baltradcrypto",
     version="0.1.dev0",
     namespace_packages=["baltradcrypto"],
     zip_safe=False,
@@ -18,4 +19,17 @@ setuptools.setup(name="baltradcrypto.crypto",
         "": "src"
     },
     install_requires=REQUIRED_PACKAGES,
+    entry_points = {
+        "baltradcrypto.config.commands": [
+            "create_keys = baltradcrypto.client.cfgcmd:CreateKeys"
+        ],
+        "console_scripts" : [
+            "baltrad-crypto-config = baltradcrypto.config_main:run"
+        ]
+    },
+    test_suite="nose.collector",
+    tests_require=[
+        "mock >= 0.7",
+    ],
+    
 )
