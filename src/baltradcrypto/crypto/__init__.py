@@ -42,7 +42,7 @@ except:
 BIG_ENDIAN_INT_SPECIFIER = ">i"
 BIG_ENDIAN_LONG_LONG_SPECIFIER = ">q"
 
-logger = logging.getLogger("baltard.crypto.crypto")
+logger = logging.getLogger("baltradcrypto.crypto")
 
 class public_key(object):
     """Public Key
@@ -180,7 +180,7 @@ class private_key(object):
 
         with open(filename, "w") as fp:
             json.dump({"nodename":nodename,
-                       "creator":"baltrad.exchange.crypto", 
+                       "creator":"baltradcrypto.crypto", 
                        "key":self.PEM(),
                        "keyType":keyType,        
                        "type":"private"}, fp)
@@ -235,7 +235,7 @@ def load_key(filename):
         try:
             import json
             jsond = json.loads(data)
-            if "creator" in jsond and jsond["creator"] == "baltrad.crypto.crypto":
+            if "creator" in jsond and jsond["creator"] == "baltradcrypto.crypto":
                 return import_key(jsond["key"])
         except:
             pass
