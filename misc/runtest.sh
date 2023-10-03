@@ -18,7 +18,7 @@ runtest() {
   PYTHONPATH=src:test python3 -m nose2 --config misc/unittest.cfg --plugin nose2.plugins.junitxml --junit-xml
   if [ $? -ne 0 ]; then
     echo "Failed to run tests"
-    exit $?
+    exit 127
   fi
 }
 
