@@ -45,7 +45,7 @@ class test_internal_crypto(unittest.TestCase):
         msg = "This is the message to sign"
         signature = privatekey.sign(msg)
         othermsg = "This is another message that isnt signed"
-        self.assertTrue(publickey.verify(msg+" ", signature))
+        self.assertTrue(publickey.verify(msg, signature))
         self.assertFalse(publickey.verify(othermsg, signature))
 
     def test_load_sign_and_verify(self):
